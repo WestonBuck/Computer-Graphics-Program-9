@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WB Program 9</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <p>controls: wasd = camera movement along X and Z Axes</p>
+    <p>control = Down Y axis  spacebar = up Y Axis</p>
+    <p>          1&3 = yaw  q&e = pitch   z&c = roll</p>
+    <p> left/right Arrow keys = fov  up/down arrow keys = aspect ratio</p>
+    <p>
+      <button type="button" onclick="eyeXUp()">eye X +</button>
+      <button type="button" onclick="eyeXDown()">eye X -</button>
+      <button type="button" onclick="atXUp()">at X +</button>
+      <button type="button" onclick="atXDown()">at X -</button>
+      <button type="button" onclick="changeView()">Change Projection Type</button>      
+    </p>     
+    <p>
+      <button type="button" onclick="eyeYUp()">eye Y +</button>
+      <button type="button" onclick="eyeYDown()">eye Y -</button>
+      <button type="button" onclick="atYUp()">at Y +</button>
+      <button type="button" onclick="atYDown()">at Y -</button>
+    </p>
+    <p>
+      <button type="button" onclick="eyeZUp()">eye Z +</button>
+      <button type="button" onclick="eyeZDown()">eye Z -</button>
+      <button type="button" onclick="atZUp()">at Z +</button>
+      <button type="button" onclick="atZDown()">at Z -</button>
+    </p>
+    <div id="slidecontainer">
+      <input type="range" min="1" max="100" value="30" class="slider" id="fovRange">
+      FOV: <span id="Demo"></span>
+      <p>
+      <input type="range" min=".1" max="10" step = ".1" value="1" class="slider" id="aspectRange">
+      Aspect Ratio: <span id="aspectDemo"></span></p>
+    </div>
+    <script src="webgl-utils.js"></script>
+    <script src="webgl-debug.js"></script>
+    <script src="cuon-utils.js"></script>
+    <script src="cuon-matrix.js"></script>
+    <script src="WBProgram9.js"></script>
+  </body>
+</html>
